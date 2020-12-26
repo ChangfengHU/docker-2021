@@ -1,6 +1,8 @@
 package com.imooc.user.controller;
 
+import com.imooc.thrift.message.MessageService;
 import com.imooc.thrift.user.UserInfo;
+import com.imooc.thrift.user.UserService;
 import com.imooc.thrift.user.dto.UserDTO;
 import com.imooc.user.redis.RedisClient;
 import com.imooc.user.response.LoginResponse;
@@ -8,6 +10,13 @@ import com.imooc.user.response.Response;
 import com.imooc.user.thrift.ServiceProvider;
 import org.apache.commons.lang.StringUtils;
 import org.apache.thrift.TException;
+import org.apache.thrift.TServiceClient;
+import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TProtocol;
+import org.apache.thrift.transport.TFramedTransport;
+import org.apache.thrift.transport.TSocket;
+import org.apache.thrift.transport.TTransport;
+import org.apache.thrift.transport.TTransportException;
 import org.apache.tomcat.util.buf.HexUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.security.MessageDigest;
 import java.util.Random;
+
 
 /**
  * Created by Michael on 2017/10/30.
@@ -79,8 +89,21 @@ public class UserController {
 
             boolean result = false;
             if(StringUtils.isNotBlank(mobile)) {
-                result = serviceProvider.getMessasgeService().sendMobileMessage(mobile, message+code);
+                TSocket socket = new TSocket("localhost", 9090, 3000);
+                TTransport transport = new TFramedTransport(socket);
+                try {
+                    transport.open();
+                } catch (TTransportException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+                TProtocol protocol = new TBinaryProtocol(transport);
+//                MessageService.Client messasgeService = serviceProvider.getMessasgeService();
+                MessageService.Client service = new MessageService.Client(protocol);
+                result =service.sendMobileMessage(mobile, message+code);
+
                 System.out.println("验证码："+result);
+                transport.close();
 //                redisClient.set(mobile, code);
             } else if(StringUtils.isNotBlank(email)) {
                 result = serviceProvider.getMessasgeService().sendEmailMessage(email, message+code);
