@@ -15,7 +15,7 @@ class MessageServiceHandler:
 
     def sendMobileMessage(self, mobile, message):
         print ("sendMobileMessage, mobile:"+mobile+", message:"+message)
-        return True
+        return "验证码调用成功"
 
     def sendEmailMessage(self, email, message):
         print ("sendEmailMessage, email:"+email+", message:"+message)

@@ -100,9 +100,8 @@ public class UserController {
                 TProtocol protocol = new TBinaryProtocol(transport);
 //                MessageService.Client messasgeService = serviceProvider.getMessasgeService();
                 MessageService.Client service = new MessageService.Client(protocol);
-                result =service.sendMobileMessage(mobile, message+code);
-
-                System.out.println("验证码："+result);
+                String result1 =service.sendMobileMessage(mobile, message+code);
+                System.out.println("验证码结果："+result1);
                 transport.close();
 //                redisClient.set(mobile, code);
             } else if(StringUtils.isNotBlank(email)) {
