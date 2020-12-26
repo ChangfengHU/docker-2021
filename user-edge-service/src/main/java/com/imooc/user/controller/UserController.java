@@ -8,6 +8,7 @@ import com.imooc.user.redis.RedisClient;
 import com.imooc.user.response.LoginResponse;
 import com.imooc.user.response.Response;
 import com.imooc.user.thrift.ServiceProvider;
+import groovy.util.logging.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -36,6 +37,7 @@ import java.util.Random;
  */
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -46,6 +48,8 @@ public class UserController {
 
     @RequestMapping(value="/login", method = RequestMethod.GET)
     public String login() {
+        System.out.println("denglu ");
+
         return "login";
     }
 
@@ -103,7 +107,7 @@ public class UserController {
                 String result1 =service.sendMobileMessage(mobile, message+code);
                 System.out.println("验证码结果："+result1);
                 transport.close();
-//                redisClient.set(mobile, code);
+                redisClient.set(mobile, code);
             } else if(StringUtils.isNotBlank(email)) {
                 result = serviceProvider.getMessasgeService().sendEmailMessage(email, message+code);
                 redisClient.set(email, code);
@@ -111,9 +115,10 @@ public class UserController {
                 return Response.MOBILE_OR_EMAIL_REQUIRED;
             }
 
-            if(!result) {
-                return Response.SEND_VERIFYCODE_FAILED;
-            }
+//            if(!result) {
+//                return Response.SEND_VERIFYCODE_FAILED;
+//            }
+
         } catch (TException e) {
             e.printStackTrace();
             return Response.exception(e);
@@ -137,6 +142,7 @@ public class UserController {
 
         if(StringUtils.isNotBlank(mobile)) {
             String redisCode = redisClient.get(mobile);
+            System.out.println("code"+redisCode);
             if(!verifyCode.equals(redisCode)) {
                 return Response.VERIFY_CODE_INVALID;
             }

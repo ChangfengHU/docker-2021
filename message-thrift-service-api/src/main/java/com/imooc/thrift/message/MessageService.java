@@ -213,7 +213,7 @@ public class MessageService {
         return false;
       }
 
-//      @Override
+      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -238,7 +238,7 @@ public class MessageService {
         return false;
       }
 
-//      @Override
+      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -403,8 +403,8 @@ public class MessageService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new sendMobileMessage_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new sendMobileMessage_argsTupleSchemeFactory();
 
-    public  java.lang.String mobile; // required
-    public  java.lang.String message; // required
+    public @org.apache.thrift.annotation.Nullable java.lang.String mobile; // required
+    public @org.apache.thrift.annotation.Nullable java.lang.String message; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -422,7 +422,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
           case 1: // MOBILE
@@ -447,7 +447,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
@@ -473,9 +473,9 @@ public class MessageService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.MOBILE, new org.apache.thrift.meta_data.FieldMetaData("mobile", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.MOBILE, new org.apache.thrift.meta_data.FieldMetaData("mobile", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.MESSAGE, new org.apache.thrift.meta_data.FieldMetaData("message", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.MESSAGE, new org.apache.thrift.meta_data.FieldMetaData("message", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(sendMobileMessage_args.class, metaDataMap);
@@ -515,12 +515,12 @@ public class MessageService {
       this.message = null;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.String getMobile() {
       return this.mobile;
     }
 
-    public sendMobileMessage_args setMobile( java.lang.String mobile) {
+    public sendMobileMessage_args setMobile(@org.apache.thrift.annotation.Nullable java.lang.String mobile) {
       this.mobile = mobile;
       return this;
     }
@@ -540,12 +540,12 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.String getMessage() {
       return this.message;
     }
 
-    public sendMobileMessage_args setMessage( java.lang.String message) {
+    public sendMobileMessage_args setMessage(@org.apache.thrift.annotation.Nullable java.lang.String message) {
       this.message = message;
       return this;
     }
@@ -565,7 +565,7 @@ public class MessageService {
       }
     }
 
-    public void setFieldValue(_Fields field,  java.lang.Object value) {
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
       switch (field) {
       case MOBILE:
         if (value == null) {
@@ -586,7 +586,7 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case MOBILE:
@@ -696,7 +696,7 @@ public class MessageService {
       return 0;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -768,7 +768,7 @@ public class MessageService {
         while (true)
         {
           schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) {
             break;
           }
           switch (schemeField.id) {
@@ -776,7 +776,7 @@ public class MessageService {
               if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
                 struct.mobile = iprot.readString();
                 struct.setMobileIsSet(true);
-              } else { 
+              } else {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
@@ -784,7 +784,7 @@ public class MessageService {
               if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
                 struct.message = iprot.readString();
                 struct.setMessageIsSet(true);
-              } else { 
+              } else {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
@@ -874,7 +874,7 @@ public class MessageService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new sendMobileMessage_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new sendMobileMessage_resultTupleSchemeFactory();
 
-    public  java.lang.String success; // required
+    public @org.apache.thrift.annotation.Nullable java.lang.String success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -891,7 +891,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
           case 0: // SUCCESS
@@ -914,7 +914,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
@@ -940,7 +940,7 @@ public class MessageService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(sendMobileMessage_result.class, metaDataMap);
@@ -974,12 +974,12 @@ public class MessageService {
       this.success = null;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.String getSuccess() {
       return this.success;
     }
 
-    public sendMobileMessage_result setSuccess( java.lang.String success) {
+    public sendMobileMessage_result setSuccess(@org.apache.thrift.annotation.Nullable java.lang.String success) {
       this.success = success;
       return this;
     }
@@ -999,7 +999,7 @@ public class MessageService {
       }
     }
 
-    public void setFieldValue(_Fields field,  java.lang.Object value) {
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
       switch (field) {
       case SUCCESS:
         if (value == null) {
@@ -1012,7 +1012,7 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
@@ -1094,7 +1094,7 @@ public class MessageService {
       return 0;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -1158,7 +1158,7 @@ public class MessageService {
         while (true)
         {
           schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) {
             break;
           }
           switch (schemeField.id) {
@@ -1166,7 +1166,7 @@ public class MessageService {
               if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
                 struct.success = iprot.readString();
                 struct.setSuccessIsSet(true);
-              } else { 
+              } else {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
@@ -1242,8 +1242,8 @@ public class MessageService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new sendEmailMessage_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new sendEmailMessage_argsTupleSchemeFactory();
 
-    public  java.lang.String email; // required
-    public  java.lang.String message; // required
+    public @org.apache.thrift.annotation.Nullable java.lang.String email; // required
+    public @org.apache.thrift.annotation.Nullable java.lang.String message; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -1261,7 +1261,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
           case 1: // EMAIL
@@ -1286,7 +1286,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
@@ -1312,9 +1312,9 @@ public class MessageService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.EMAIL, new org.apache.thrift.meta_data.FieldMetaData("email", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.EMAIL, new org.apache.thrift.meta_data.FieldMetaData("email", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-      tmpMap.put(_Fields.MESSAGE, new org.apache.thrift.meta_data.FieldMetaData("message", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.MESSAGE, new org.apache.thrift.meta_data.FieldMetaData("message", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(sendEmailMessage_args.class, metaDataMap);
@@ -1354,12 +1354,12 @@ public class MessageService {
       this.message = null;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.String getEmail() {
       return this.email;
     }
 
-    public sendEmailMessage_args setEmail( java.lang.String email) {
+    public sendEmailMessage_args setEmail(@org.apache.thrift.annotation.Nullable java.lang.String email) {
       this.email = email;
       return this;
     }
@@ -1379,12 +1379,12 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.String getMessage() {
       return this.message;
     }
 
-    public sendEmailMessage_args setMessage( java.lang.String message) {
+    public sendEmailMessage_args setMessage(@org.apache.thrift.annotation.Nullable java.lang.String message) {
       this.message = message;
       return this;
     }
@@ -1404,7 +1404,7 @@ public class MessageService {
       }
     }
 
-    public void setFieldValue(_Fields field,  java.lang.Object value) {
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
       switch (field) {
       case EMAIL:
         if (value == null) {
@@ -1425,7 +1425,7 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case EMAIL:
@@ -1535,7 +1535,7 @@ public class MessageService {
       return 0;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -1607,7 +1607,7 @@ public class MessageService {
         while (true)
         {
           schemeField = iprot.readFieldBegin();
-          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) {
             break;
           }
           switch (schemeField.id) {
@@ -1615,7 +1615,7 @@ public class MessageService {
               if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
                 struct.email = iprot.readString();
                 struct.setEmailIsSet(true);
-              } else { 
+              } else {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
@@ -1623,7 +1623,7 @@ public class MessageService {
               if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
                 struct.message = iprot.readString();
                 struct.setMessageIsSet(true);
-              } else { 
+              } else {
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
@@ -1730,7 +1730,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByThriftId(int fieldId) {
         switch(fieldId) {
           case 0: // SUCCESS
@@ -1753,7 +1753,7 @@ public class MessageService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      
+      @org.apache.thrift.annotation.Nullable
       public static _Fields findByName(java.lang.String name) {
         return byName.get(name);
       }
@@ -1781,7 +1781,7 @@ public class MessageService {
     public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT,
           new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.BOOL)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(sendEmailMessage_result.class, metaDataMap);
@@ -1839,7 +1839,7 @@ public class MessageService {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
     }
 
-    public void setFieldValue(_Fields field,  java.lang.Object value) {
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
       switch (field) {
       case SUCCESS:
         if (value == null) {
@@ -1852,7 +1852,7 @@ public class MessageService {
       }
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public java.lang.Object getFieldValue(_Fields field) {
       switch (field) {
       case SUCCESS:
@@ -1932,7 +1932,7 @@ public class MessageService {
       return 0;
     }
 
-    
+    @org.apache.thrift.annotation.Nullable
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }

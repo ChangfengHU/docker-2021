@@ -30,6 +30,7 @@ public class UserSerivceImpl implements UserService.Iface {
 
     @Override
     public UserInfo getUserByName(String username) throws TException {
+        System.out.println("getUserByName start");
         return userMapper.getUserByName(username);
     }
 
