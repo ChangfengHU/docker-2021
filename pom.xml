@@ -20,5 +20,11 @@
         <module>api-gateway-zuul</module>
     </modules>
 
+    <dependencyManagement>
+        <dependencies>
 
+
+
+        </dependencies>
+    </dependencyManagement>
 </project>
