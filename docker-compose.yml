@@ -11,6 +11,8 @@ services:
 
   user-service:
     image: user-service:latest
+    links:
+      - message-service
     command:
     - "--mysql.address=121.40.8.72"
 
@@ -21,6 +23,8 @@ services:
     - message-service
     command:
     - "--redis.address=18.222.223.9"
+    ports:
+      - 8082:8082
 
   course-service:
     image: course-service:latest
@@ -40,7 +44,7 @@ services:
   api-gateway-zuul:
     image: api-gateway-zuul:latest
     links:
-    - course-edge-service
+#    - course-edge-service
     - user-edge-service
     ports:
     - 80:80
