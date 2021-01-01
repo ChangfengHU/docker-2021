@@ -9,4 +9,4 @@ mvn clean package
 docker build -t user-edge-service:latest .
 docker rm $(docker ps -a -q)
 docker rmi $(docker images|grep none| awk '{print $3}')
-docker run -it user-edge-service:latest --redis.address = 127.0.0.1
+docker run -it user-edge-service:latest --redis.address = 18.222.223.9
