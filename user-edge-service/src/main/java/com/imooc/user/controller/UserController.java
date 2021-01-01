@@ -57,7 +57,7 @@ public class UserController {
     @ResponseBody
     public Response login(@RequestParam("username")String username,
                       @RequestParam("password")String password) {
-
+        System.out.println("denglu -------------");
         //1. 验证用户名密码
         UserInfo userInfo = null;
         try {
@@ -93,7 +93,7 @@ public class UserController {
 
             boolean result = false;
             if(StringUtils.isNotBlank(mobile)) {
-                TSocket socket = new TSocket("localhost", 9090, 3000);
+                TSocket socket = new TSocket("message-service", 9090, 3000);
                 TTransport transport = new TFramedTransport(socket);
                 try {
                     transport.open();
@@ -135,7 +135,7 @@ public class UserController {
                              @RequestParam(value="mobile", required = false) String mobile,
                              @RequestParam(value="email", required = false) String email,
                              @RequestParam("verifyCode") String verifyCode) {
-
+        System.out.println("register---start----");
         if(StringUtils.isBlank(mobile) && StringUtils.isBlank(email)) {
             return Response.MOBILE_OR_EMAIL_REQUIRED;
         }
