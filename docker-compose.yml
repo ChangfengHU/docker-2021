@@ -22,7 +22,7 @@ services:
     - user-service
     - message-service
     command:
-    - "--redis.address=18.222.223.9"
+    - "--redis.address=13.58.210.229"
     ports:
       - 8082:8082
 
@@ -32,14 +32,14 @@ services:
     - user-service
     command:
     - "--mysql.address=121.40.8.72"
-    - "--zookeeper.address=18.222.223.9"
+    - "--zookeeper.address=13.58.210.229"
 
   course-edge-service:
     image: course-edge-service:latest
     links:
     - user-edge-service
     command:
-    - "--zookeeper.address=18.222.223.9"
+    - "--zookeeper.address=13.58.210.229"
 
   api-gateway-zuul:
     image: api-gateway-zuul:latest
