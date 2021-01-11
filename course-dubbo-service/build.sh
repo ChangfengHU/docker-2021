@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 mvn clean package
-docker build -t course-service:latest .
+docker build -t faker322/course-service:latest .
+
+#docker pull faker322/course-service:latest
+docker push faker322/course-service:latest
 # 关掉所有
 #docker rm $(docker ps -a -q)
 #docker rmi $(docker images|grep none| awk '{print $3}')
